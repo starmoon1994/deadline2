@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
     @RequestMapping("/getToken")
-    public String getToken(){
+    public String getToken() {
 
         return "demo";
     }
 
     @RequestMapping("/simpleLogin")
-    public String simpleLogin(){
+    public String simpleLogin() {
 
         return "demo";
     }

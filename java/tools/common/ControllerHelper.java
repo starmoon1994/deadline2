@@ -1,6 +1,6 @@
 package tools.common;
 
-import com.sftc.tools.api.APIResponse;
+import tools.api.APIResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -13,7 +13,7 @@ public class ControllerHelper {
      * 对APIResponse进行封装 使httpcode一一对应
      *
      * @param apiResponse 统一返回值
-     * @return  ResponseEntity
+     * @return ResponseEntity
      */
     public static ResponseEntity<APIResponse> responseEntityBuilder(APIResponse apiResponse) {
         ResponseEntity<APIResponse> responseEntity;
