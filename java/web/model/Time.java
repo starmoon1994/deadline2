@@ -1,4 +1,4 @@
-package src.model;
+package web.model;
 
 /**
  * 新建time模型

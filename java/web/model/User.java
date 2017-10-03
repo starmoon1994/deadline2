@@ -1,4 +1,4 @@
-package src.model;
+package web.model;
 
 /**
  * 用户模型

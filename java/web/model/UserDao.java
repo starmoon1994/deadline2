@@ -1,8 +1,7 @@
-package src.model;
+package web.model;
 
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
-import src.model.User;
 
 public interface UserDao {
 
