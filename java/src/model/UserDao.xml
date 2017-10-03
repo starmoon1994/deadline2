@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="src.model.UserDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="src.model.User">
+        <result column="id" property="id"/>
+        <result column="user_uuid" property="user_uuid"/>
+        <result column="user_token" property="user_token"/>
+        <result column="user_name" property="user_name"/>
+        <result column="user_create_time" property="user_create_time"/>
+        <result column="user_avatr" property="user_avatr"/>
+        <result column="user_status" property="user_status"/>
+        <result column="user_permission" property="user_permission"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        user_uuid,
+        user_token,
+        user_name,
+        user_create_time,
+        user_avatr,
+        user_status,
+        user_permission
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> id, </if>
+            <if test="pojo.user_uuid != null"> user_uuid, </if>
+            <if test="pojo.user_token != null"> user_token, </if>
+            <if test="pojo.user_name != null"> user_name, </if>
+            <if test="pojo.user_create_time != null"> user_create_time, </if>
+            <if test="pojo.user_avatr != null"> user_avatr, </if>
+            <if test="pojo.user_status != null"> user_status, </if>
+            <if test="pojo.user_permission != null"> user_permission, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.user_uuid != null"> #{pojo.user_uuid}, </if>
+            <if test="pojo.user_token != null"> #{pojo.user_token}, </if>
+            <if test="pojo.user_name != null"> #{pojo.user_name}, </if>
+            <if test="pojo.user_create_time != null"> #{pojo.user_create_time}, </if>
+            <if test="pojo.user_avatr != null"> #{pojo.user_avatr}, </if>
+            <if test="pojo.user_status != null"> #{pojo.user_status}, </if>
+            <if test="pojo.user_permission != null"> #{pojo.user_permission}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO user(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.user_uuid},
+            #{pojo.user_token},
+            #{pojo.user_name},
+            #{pojo.user_create_time},
+            #{pojo.user_avatr},
+            #{pojo.user_status},
+            #{pojo.user_permission}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE user
+        <set>
+            <if test="pojo.id != null"> id = #{pojo.id}, </if>
+            <if test="pojo.user_uuid != null"> user_uuid = #{pojo.user_uuid}, </if>
+            <if test="pojo.user_token != null"> user_token = #{pojo.user_token}, </if>
+            <if test="pojo.user_name != null"> user_name = #{pojo.user_name}, </if>
+            <if test="pojo.user_create_time != null"> user_create_time = #{pojo.user_create_time}, </if>
+            <if test="pojo.user_avatr != null"> user_avatr = #{pojo.user_avatr}, </if>
+            <if test="pojo.user_status != null"> user_status = #{pojo.user_status}, </if>
+            <if test="pojo.user_permission != null"> user_permission = #{pojo.user_permission} </if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM user
+        <where>
+            <if test="pojo.id != null"> AND id = #{pojo.id} </if>
+            <if test="pojo.user_uuid != null"> AND user_uuid = #{pojo.user_uuid} </if>
+            <if test="pojo.user_token != null"> AND user_token = #{pojo.user_token} </if>
+            <if test="pojo.user_name != null"> AND user_name = #{pojo.user_name} </if>
+            <if test="pojo.user_create_time != null"> AND user_create_time = #{pojo.user_create_time} </if>
+            <if test="pojo.user_avatr != null"> AND user_avatr = #{pojo.user_avatr} </if>
+            <if test="pojo.user_status != null"> AND user_status = #{pojo.user_status} </if>
+            <if test="pojo.user_permission != null"> AND user_permission = #{pojo.user_permission} </if>
+        </where>
+        LIMIT 10000 
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM user where id = #{pojo.id}
+    </delete>
+</mapper>
